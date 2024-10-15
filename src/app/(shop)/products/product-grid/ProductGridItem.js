@@ -27,7 +27,7 @@ function ProductGridItem({product}) {
         />
       <div className="p-4 flex flex-col">
         <Link className="hover:text-blue-600 cursor-pointer"
-          href={`/products/${product.slug}`}>
+          href={`/product/${product.slug}`}>
           {`${product.title}`}
         </Link>
         <span className="font-bold">${`${product.price}`}</span>

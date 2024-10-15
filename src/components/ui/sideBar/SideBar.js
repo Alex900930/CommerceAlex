@@ -30,7 +30,7 @@ export default function SideBar() {
 
 
       {/*SideMenu*/}
-      <nav className={`fixed p-5 right-0 top-0 w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-transform duration-300 ${isOpen ? '' : 'translate-x-full'}`}>
+      <nav className={`fixed p-5 right-0 top-0 w-3/4 md:w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-transform duration-300 ${isOpen ? '' : 'translate-x-full'}`}>
       <IoCloseOutline
         size={30}
         className ="absolute top-5 right-5 cursor-pointer"
