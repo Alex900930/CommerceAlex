@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/prop-types */
 import { titleFonts } from "@/config/fonts";
 
 export default function Title({title, subtitle, className}) {
