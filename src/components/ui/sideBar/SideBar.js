@@ -11,27 +11,30 @@ import {
   IoTicketOutline
 } from "react-icons/io5";
 import Link from "next/link";
-//import useUiStore from "@/store/ui/ui-store";
+import useSidebarStore from "@/store/ui/ui-store";
 
 
 export default function SideBar() {
   
+  const { isOpen, closeSideMenu } = useSidebarStore();
+
   return (
     <div>
       {/*Black Background*/}
-      <div className="fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30">
+      <div className={` ${isOpen ? "fixed top-0 left-0 w-screen h-screen z-10 bg-black opacity-30" : ""}`}>
       </div>
 
       {/*Blur*/}
-      <div className="fade-in fixed top0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-sm">
+      <div className={` ${isOpen ? "fade-in fixed top0 left-0 w-screen h-screen z-10 backdrop-filter backdrop-blur-sm" : ""}`}>
       </div>
 
 
       {/*SideMenu*/}
-      <nav className="fixed p-5 right-0 top-0 w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-transform duration-300">
+      <nav className={`fixed p-5 right-0 top-0 w-[500px] h-screen bg-white z-20 shadow-2xl transform transition-transform duration-300 ${isOpen ? '' : 'translate-x-full'}`}>
       <IoCloseOutline
         size={30}
         className ="absolute top-5 right-5 cursor-pointer"
+        onClick={closeSideMenu}
       />
         {/*Input de Busqueda*/}
         <div className="relative mt-14">
