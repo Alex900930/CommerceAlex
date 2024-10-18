@@ -8,8 +8,8 @@ export default function Home() {
   return (
     <>
        <Title 
-       title="Tienda"
-       subtitle="Todos los productos"
+       title="Loja"
+       subtitle="Todos os produtos."
        className="mb-2"
        />
        <ProductGrid products={products} />

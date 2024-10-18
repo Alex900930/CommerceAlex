@@ -1,3 +1,4 @@
+"use client"
 /* eslint-disable react/prop-types */
 /* eslint-disable react/react-in-jsx-scope */
 import { products } from "@/seed/seed";
@@ -5,6 +6,7 @@ import NotFound from "../not_found";
 import { titleFonts } from "@/config/fonts";
 import SizeSelector from "@/components/product/size-selector/SizeSelector";
 import QuantitySelector from "@/components/product/quantity-selector/QuantitySelector";
+import ProductSlideShow from "@/components/product/slideshow/ProductSlideShow";
 
 function Prod({params}) {
   const {slug} = params;
@@ -18,7 +20,11 @@ function Prod({params}) {
     <div className="mt-5 mb-20 grid md:grid-cols-3 gap-3">
       {/*SlideShow*/}
       <div className="col-span-1 md:col-span-2">
-        <h1>Hola Mundo</h1>
+        <ProductSlideShow  
+         title={product.title}
+         images={product.images}
+         className={`p-1`}
+        />
       </div>
       {/*Detalles*/}
       <div className="col-span-1 px-5">
@@ -36,7 +42,7 @@ function Prod({params}) {
 
 
         {/*Selector de Cantidad*/}
-        <QuantitySelector />
+        <QuantitySelector quantity={product.inStock}/>
 
         {/*Button*/}
         <button className="btn-primary my-5">

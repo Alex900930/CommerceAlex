@@ -12,11 +12,11 @@ export default function Cat({ params }) {
    const getFullCategoryName = (category) => {
     switch(category) {
       case 'kid':
-        return 'niños';
+        return 'crianças';
       case 'men':
-        return 'hombres';
+        return 'homens';
       case 'women':
-        return 'mujeres';
+        return 'mulheres';
       default:
         return '';
     }
@@ -31,8 +31,8 @@ export default function Cat({ params }) {
     {
         id === 'kid' || id === 'women' || id === 'men' ? (<>
        <Title 
-       title="Tienda"
-       subtitle={`Productos para ${categoryTitle}`}
+       title="Loja"
+       subtitle={`Produtos para ${categoryTitle}`}
        className="mb-2"
        />
        <ProductGrid products={productsArr} />
