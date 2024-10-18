@@ -61,7 +61,7 @@ function ProductSlideShow({images, title, className}) {
                 <SwiperSlide key={img}>
                     <Image
                      width={300}
-                     height={300}
+                     height={200}
                      src={`/products/${img}`}
                      alt={title}
                      className="object-contain rounded-lg"
