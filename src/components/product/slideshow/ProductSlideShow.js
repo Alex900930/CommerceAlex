@@ -35,16 +35,40 @@ function ProductSlideShow({images, title, className}) {
                 <SwiperSlide key={img}>
                     <Image
                      width={1024}
-                     height={800}
+                     height={500}
                      src={`/products/${img}`}
                      alt={title}
-                     className="object-fill rounded-lg"
+                     className="object-contain rounded-lg"
                      />
                 </SwiperSlide>
             ))
         }
 
 
+      </Swiper>
+
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={4}
+        freeMode={true}
+        watchSlidesProgress={true}
+        modules={[FreeMode, Navigation, Thumbs]}
+        className="mySwiper"
+      >
+        {
+            images.map( img => (
+                <SwiperSlide key={img}>
+                    <Image
+                     width={300}
+                     height={300}
+                     src={`/products/${img}`}
+                     alt={title}
+                     className="object-contain rounded-lg"
+                     />
+                </SwiperSlide>
+            ))
+        }
       </Swiper>
 
     </div>
