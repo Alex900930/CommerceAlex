@@ -12,19 +12,22 @@ function ProductGridItem({product}) {
 
   return (
     <div className='rounded-md overflow-hidden fade-in'>
+       <Link href={`/product/${product.slug}`}>
         <Image 
-            src={`/products/${displayImage}`}
-            alt={product.title}
-            className="w-full object-cover rounded"
-            width={500}
-            height={500}
-            onMouseEnter={() => {
-              setdisplayImage(product.images[1])
-            }}
-            onMouseLeave={() => {
-              setdisplayImage(product.images[0])
-            }}
-        />
+              src={`/products/${displayImage}`}
+              alt={product.title}
+              className="w-full object-cover rounded"
+              width={500}
+              height={500}
+              onMouseEnter={() => {
+                setdisplayImage(product.images[1])
+              }}
+              onMouseLeave={() => {
+                setdisplayImage(product.images[0])
+              }}
+          />
+       </Link> 
+        
       <div className="p-4 flex flex-col">
         <Link className="hover:text-blue-600 cursor-pointer"
           href={`/product/${product.slug}`}>

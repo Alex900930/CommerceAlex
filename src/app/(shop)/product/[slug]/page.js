@@ -8,6 +8,7 @@ import SizeSelector from "@/components/product/size-selector/SizeSelector";
 import QuantitySelector from "@/components/product/quantity-selector/QuantitySelector";
 import ProductSlideShow from "@/components/product/slideshow/ProductSlideShow";
 import ProductMobileSlideShow from "@/components/product/slideshow/ProductMobileSlideShow";
+import Link from "next/link";
 
 function Prod({params}) {
   const {slug} = params;
@@ -59,7 +60,10 @@ function Prod({params}) {
 
         {/*Button*/}
         <button className="btn-primary my-5">
-          Agregar al Carrito
+          <Link href="/cart">
+            Agregar al Carrito
+          </Link>
+          
         </button>
 
         {/*Descripcion*/}

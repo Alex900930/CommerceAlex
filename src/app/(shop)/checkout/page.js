@@ -4,9 +4,8 @@ import React from 'react'
 import { products } from '@/seed/seed'
 import Image from "next/image"
 import QuantitySelector from '@/components/product/quantity-selector/QuantitySelector'
-import { redirect } from 'next/navigation'
 
-export default function CartComponent() {
+export default function CheckoutComp() {
 
 const productsInCart = [
   products[0],
@@ -14,23 +13,21 @@ const productsInCart = [
   products[2] 
 ]
 
-/* redirect('/empty') */
-
   return (
     <div className='flex justify-center items-center mb-72 px-10 sm:px-0'>
       
       <div className='flex flex-col w-[1000px]'>
 
           <Title 
-           title="Carrito"       
+           title="Verificar Orden"       
           />
 
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-10'>
              {/*Carrito*/}
               <div className='flex flex-col mt-5'>
-                <span className='text-xl'> Agregar mas items</span>
-                <Link href="/" className='underline mb-5 hover:text-blue-600'>
-                  Continua comprando
+                <span className='text-xl'> Ajustar Elementos</span>
+                <Link href="/cart" className='underline mb-5 hover:text-blue-600'>
+                  Editar Selección
               </Link>
               
               
@@ -51,10 +48,9 @@ const productsInCart = [
                       /> 
                       <div>
                         <p>{prod.title}</p>
-                        <p>{prod.price}</p>
-                        <QuantitySelector quantity={3} />
+                        <p>{prod.price} * 3</p>
+                        <p className='font-bold'>Subtotal: {prod.price * 3}</p>
                       </div>                         
-                      <button className='underline mt-3'>Remover</button>
                     </div>
                   )
 
@@ -64,7 +60,24 @@ const productsInCart = [
               </div>
 
              {/*Checkout - Resumen de Ordenes*/}
-                <div className='bg-white rounded-xl shadow-xl p-7 h-fit'>
+                <div className='bg-white rounded-xl shadow-xl p-7'>
+
+                <h2 className='text-2xl mb-2'>Direccion de Entrega</h2>
+                <div className='mb-10'>
+                  <p>Alex Aherrera</p>
+                  <p>Av. Doctor Aramis 123</p>
+                  <p>Caninde, Centro</p>
+                  <p>Complemento, Casa</p>
+                  <p>CEP: 627000-00</p>
+                  <p>No. Telef: 85 123 123 123</p>
+                </div>
+
+                {/*Linea divisoria*/}
+
+                  <div className='h-0.5 bg-gray-200 w-full mb-10 rounded'>
+
+                  </div>
+
                   <h2 className='text-2xl mb-2'>Resumen de Orden</h2>
                   <div className='grid grid-cols-2'>
                     
@@ -80,11 +93,20 @@ const productsInCart = [
                     <span className='mt-5 text-2xl'>Total:</span>
                     <span className='mt-5 text-2xl text-right'>$ 100</span>
                   </div>
+
+                  <p className='mb-5'>
+                    {/*Disclaimer*/}
+                    <span className='text-xs'>
+                      Al hacer click en &quot;Colocar Orden&quot;, aceptas nuestros <a href='#' className='underline'>Términos y Condiciones</a> y 
+                      <a href='#' className='underline'> Políticas de Privacidad</a>
+                    </span>
+                  </p>
+
                   <div className='mt-5 mb-2 w-full'>
-                    <Link href="/checkout/address"
+                    <Link href="/orders/123"
                     className='flex btn-primary justify-center'
                     >
-                      Checkout
+                      Colocar Orden
                     </Link>
                   </div>
                 </div>
