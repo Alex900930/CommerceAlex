@@ -1,10 +1,12 @@
 "use client"
 //import useUiStore from "@/store/ui/ui-store";
-import useSidebarStore from "@/store/ui/ui-store";
+import {useSidebarStore} from "@/store/ui/ui-store";
+import AlexTudo from "/public/imgs/AlexTudo.png"
 import { titleFonts } from '@/config/fonts'
 import Link from 'next/link'
 import React from 'react'
 import {IoSearchOutline, IoCartOutline} from 'react-icons/io5';
+import Image from "next/image";
 
 
 export default function TopMenu() {
@@ -14,10 +16,20 @@ export default function TopMenu() {
 
   return (
     <nav className='flex px-5 justify-between items-center w-full'>
-        <div>
-          <Link href="/">
-            <span className={`${titleFonts.className} antialiased font-bold`}>CommerceAlex</span>
-            <span> | Shop</span>
+        <div >
+          <Link href="/" className="flex">
+           {/*  <span className={`${titleFonts.className} antialiased font-bold`}>CommerceAlex</span> */}
+          
+              <Image 
+                  src={AlexTudo}
+                  alt="Logo"
+                  width={100}
+                  height={100}
+                  className=" object-cover"
+              />
+           
+                   
+            
           </Link>
         </div>
 

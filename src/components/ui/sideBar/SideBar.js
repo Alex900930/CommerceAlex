@@ -11,7 +11,7 @@ import {
   IoTicketOutline
 } from "react-icons/io5";
 import Link from "next/link";
-import useSidebarStore from "@/store/ui/ui-store";
+import {useSidebarStore} from "@/store/ui/ui-store";
 
 
 export default function SideBar() {

@@ -9,5 +9,15 @@ const useSidebarStore = create((set) => ({
   closeSideMenu: () => set({ isOpen: false })
 }))
 
+const useMainStore = create((set) => ({
+  isOpenMain: false,
 
-export default useSidebarStore
+  toggleSidebar: () =>
+    set((state) => ({ isOpenMain: !state.isOpenMain })),
+  openMainMenu: () => set({ isOpenMain: true }),
+  closeMainMenu: () => set({ isOpenMain: false })
+}))
+
+
+
+export { useSidebarStore, useMainStore };
